@@ -1,0 +1,51 @@
+data = [
+		{//1
+			"img": "./dist/img/mycompany.jpg",
+			"title": "mycompany",
+			"link": "pages/mycompany/"
+		},
+
+		{//2
+			"img": "./dist/img/redbox.jpg",
+			"title": "redbox",
+			"link": "pages/redbox/"
+		},
+
+		{//3
+			"img": "./dist/img/educationtest.png",
+			"title": "тест по ИБ",
+			"link": "pages/educationtest/"
+		},
+
+		{//4
+			"img": "./dist/img/takeme.jpg",
+			"title": "take me",
+			"link": "pages/takeme/"
+		},
+
+		{//5
+			"img": "./dist/img/kontrcassa.jpg",
+			"title": "контркасса",
+			"link": "pages/kontrcassa/"
+		},
+
+
+		{//6
+			"img": "./dist/img/modern.jpg",
+			"title": "modern",
+			"link": "pages/modern/"
+		},
+
+		{//7
+			"img": "./dist/img/dart.jpg",
+			"title": "dart",
+			"link": "pages/dart_service/"
+		},
+
+		{//8
+			"img": "./dist/img/donate2.png",
+			"title": "задонатить",
+			"link": "https://rocketbank.ru/aleksey-petrov-sparkling-hill"
+		},
+		// 
+]
