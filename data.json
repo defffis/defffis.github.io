@@ -1,4 +1,5 @@
-data = [
+
+{//<--удолить для активации data = [
 		{//1
 			"img": "./dist/img/mycompany.jpg",
 			"title": "mycompany",

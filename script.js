@@ -16,6 +16,6 @@ for (var i = 0; i < sites.length; i++) {
 
 	sendMail = function()
 	{
-	    window.location.href = `mailto:al1111997@yandex.ru`;
+	    window.location.href = `mailto:navrozov.dan@gmail.com`;
 	}
 });
