@@ -2,7 +2,7 @@
 data = [
 		{//1
 			"img": "./dist/img/ef.png",
-			"title": "Эффект для Instagram",
+			"title": "Эффекты",
 			"link": "effect.html"
 		},
 
