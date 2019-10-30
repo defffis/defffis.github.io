@@ -1,0 +1,187 @@
+body {
+	font-family: 'Gothic', sans-serif;
+	
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	list-style: none;
+	display: flex;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	background: #f6f6f6;
+	padding: 22px 0;
+}
+
+.header-container {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-container a{
+	color: black;
+	font-size: 16px;
+	padding: 27px 6px;
+	margin-right: 63px;
+}
+
+.header-container a:hover{
+	background: #ffea00;
+}
+
+#menu-checkbox {
+	display: none;
+}
+
+ul {
+	display: flex;
+}
+
+
+nav {
+	margin-top: 20px;
+}
+
+
+
+
+.top-slide {
+	background: url(../img/slider_bg.jpg) no-repeat;
+	padding-top: 120px;
+	padding-bottom: 280px;
+}
+
+.top-container {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.top-slide h2{
+	background: #ffea00;
+	display: inline;
+	font-size: 70px;
+	padding: 0 13px;
+}
+
+.top-slide :nth-child(2){
+	margin-bottom: 10px;
+}
+
+.top-slide p{
+	background: #414146;
+	display: inline;
+	font-size: 24px;
+	color: white;
+	padding: 0 4px;
+}
+
+.specialize-container{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.specialize-container h3{
+	font-size: 35px;
+	margin-top: 30px;
+	text-transform: uppercase;
+	font-weight: lighter;
+}
+
+.specialize-container p{
+	font-size: 24px;
+	margin-top: 20px;
+	margin-bottom: ;
+}
+
+
+
+
+
+@media screen and (max-width: 420px){
+	.header-container{
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
+	.main-menu{
+		display: none;	
+	}
+	.main-menu li{
+		width: 100%;
+		display: block;
+		font-size: 12px;
+	}
+	.main-menu a{
+		display: block;
+		padding: 8px;
+	}
+	.toggle-button{
+		text-align: center;
+		display: block;
+		cursor: pointer;
+		color: black;
+		margin-top: 20px;
+	}
+	.toggle-button:after{
+		content: attr(data-open);
+		display: block;
+	}
+	#menu-checkbox:checked + nav[role="navigation"] .main-menu{
+		display: block;
+	}
+	#menu-checkbox:checked + nav[role="navigation"] .toggle-button:after{
+		content: attr(data-close);
+	}
+	.header-container a{
+		margin-right: -65px;
+	}
+	.main-menu {
+		position: relative;
+		top: 30px;
+		right: 115px;
+	}
+}
+
+.first-p{
+	font-size: 20px;
+	color: white;
+}
+
+.bottom-card{
+	background: #414146;
+	position: relative;
+	top: -30px;
+}
+
+.specialize-card {
+	margin-top: 65px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.specialize-card p {
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+
+/*@font-face {
+// название шрифта(чтобы не запутаться лучше указать название папки со шрифтом) 
+font-family: "Gothic"; 
+// адрес шрифта и тип 
+src: url(../fonts/GOTHIC.ttf) format("truetype"); 
+font-style: normal; 
+font-weight: normal; 
+} */

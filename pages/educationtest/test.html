@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Проверь свои знания по информационной безопасности | Оренбург</title>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(53097058, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/53097058" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+	<script type="text/javascript" src="./test.json"></script>
+	<script src="./script.js"></script>
+	<script src="./jquery.js"></script>
+	<script src="./bootstrap.min.js"></script>
+	<script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+	<script src="https://yastatic.net/share2/share.js"></script>
+	<script src="https://momentjs.com/downloads/moment.js"></script>
+	<link rel="stylesheet" href="./bootstrap3.3.7.css">
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="introjs.min.css">
+	<script src="./intro.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+				    <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		    	</button>
+				<a class="navbar-brand" href="https://github.com/lexapetrov" title="Разработчик: Алексей Петров"><img class="smile" src="img/dev4.png" alt="🧔"></a>
+				<a class="navbar-brand" href="https://github.com/romanchumakov" title="Разработчик: Роман Чумаков"><img class="smile" src="img/dev5.png" alt="💁‍♂"></a>
+		    </div>
+			    <div class="collapse navbar-collapse" id="navbar-main">
+					 <ul class="nav navbar-nav">
+				        <li><a href="index.html">Главная</a></li>
+				        <li><a href="about.html">О системе</a></li>
+				        <li class="active"><a href="test.html">Тестирование</a></li>
+				        <li><a href="contacts.html">Контакты</a></li>
+      				</ul>
+			    </div>
+		</div>
+	</nav>
+		<div class="container">
+			<main>
+				<div class="row">
+					<div class="col-sm-12 col-xs-12">
+						<div id="hello" class="hello">
+							<p>Привет! Чтобы начать, напиши своё имя и фамилию:</p>
+							<input type="text" required=""  id="name" placeholder="имя и фамилия"></input >
+							<a href="#" id="begin" class="btn btn-info begintest" onclick="showQuestions();">Начать тест!</a>
+						</div>
+						<div id="test" class="hidden">
+							<div class = "test-header-container">
+								<div class="progress-bar-container">
+									<span id="progress"></span>
+									<div id="progress-bar-wrapper">
+										<div id="progress-bar">
+
+										</div>
+									</div>
+								</div>
+								<div class="time" data-step="1" data-intro='Время прохождения тестирования ограничено'>
+									<p><span id="timer"></span></p>
+								</div>
+							</div>
+							<div id="question">
+
+							</div>
+							<form id="answers" class="answers"  data-step="2" data-intro='Выберите 1 ответ'>
+
+							</form>
+							<div class="navbutton">
+								<a href="#" onclick="next();" class="btn btn-success nextquestion" id="next"  data-step="3" data-intro='И переходите к следующему вопросу'>Следующий вопрос</a>
+								<a href="#" id="canceltest" data-step="4" data-intro='Можно завершить тестирование досрочно' onclick="complete();" class="btn btn-danger canceltest">Завершить тест</a>
+							</div>
+							<div><span id="number"><!-- вопрос N из 30 --></span></div>
+
+						</div>
+						<div>
+							<div><p>Понравилось? Поделитесь в социальных сетях.	<span style="float:right;"> Возникли трудности с взаимодействием? <a href="javascript:void(0);" onclick="javascript:introJs().start();">показать обучение</a></span></div>
+								<div  id="share" class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,twitter,telegram" data-counter="ig">
+
+								</div>
+						</div>
+					</div>
+				</div>
+				<div class="hidden" id="result">
+					<h4 id="result-brief" data-step="5" data-intro='Ваш результат'></h4>
+					<table id="result-table"/>
+
+					<div class="uniquecode" id="" data-step="6" data-intro='Результат сохранён здесь. Сохраните этот код, чтобы в будущем посмотреть результаты пройденных тестов.'>
+						<p>Ваш уникальный код результата тестирования:</p>
+						<textarea id="uniquecode" readonly rows="5" cols="40"></textarea>
+						<a href="#" id="copyto" class="btn btn-info" onclick="copyto();">Скопировать код в буфер</a>
+						<a href="#" onclick="sendMail();" class="btn btn-info">Отправить на почту</a>
+						<a href="" id="a" class="btn btn-success">Скачать отчёт</a>
+						<p>Вы сможете ввести код на <a href="index.html" class="underlink">этой странице</a></p>
+					</div>
+				</div>
+			</main>
+		</div>
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
