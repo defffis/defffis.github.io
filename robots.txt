@@ -1,5 +1,11 @@
 User-agent: *
 
-Disallow: /pages/
+Disallow: /pages/css/
 
-Disallow: /dist/
+Disallow: /dist/fonts/
+
+Disallow: /dist/jq/
+
+Disallow: /dist/js/
+
+Disallow: /dist/psd/
