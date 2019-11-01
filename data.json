@@ -6,12 +6,12 @@ data = [
 			"link": "effect.html"
 		},
 
-		{//2
+
+		{//3
 			"img": "./dist/img/me.png",
 			"title": "Обо мне",
 			"link": "me.html"
 		},
-
 	
 		// 
 ]
