@@ -1,0 +1,27 @@
+		.op 
+		{background-size: 100%;
+			background-repeat: no-repeat;
+			background-attachment: fixed;}
+			.h1 {opacity: 1;}
+.div {
+
+opacity: .6;
+}
+.gr1 {
+  background: url(images/grey.png); /* прозрачность серого */
+  }
+.gre {
+  background: url(images/gre.png); /* прозрачность зелёного */
+  }
+
+
+
+.un {
+  -webkit-touch-callout: none; /* отключение выделения */
+  -webkit-user-select: none;   
+  -khtml-user-select: none;    
+  -moz-user-select: none;      
+  -ms-user-select: none;       
+  user-select: none;           
+                                  
+}
