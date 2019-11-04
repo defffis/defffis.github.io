@@ -2,6 +2,8 @@
 		{background-size: 100%;
 			background-repeat: no-repeat;
 			background-attachment: fixed;}
+
+
 			.h1 {opacity: 1;}
 .div {
 
@@ -25,3 +27,12 @@ opacity: .6;
   user-select: none;           
                                   
 }
+.hi:hover
+{opacity: .5;
+ text-decoration: none;
+ color:#708090;
+ 
+
+
+}
+
