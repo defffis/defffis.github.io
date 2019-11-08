@@ -10,10 +10,10 @@
 opacity: .6;
 }
 .gr1 {
-  background: url(images/grey.png); /* прозрачность серого */
+  background: url("part/part1/IMAGES/grey.png"); /* прозрачность серого */
   }
 .gre {
-  background: url(images/gre.png); /* прозрачность зелёного */
+  background: url(part/part1/IMAGES/gre.png); /* прозрачность зелёного */
   }
 
 
