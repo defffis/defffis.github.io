@@ -1,6 +1,11 @@
 
 data = [
 		{//1
+			"img": "./dist/img/part1.jpg",
+			"title": "Квалификация",
+			"link": "part/part1/index.html"
+		},
+		{//2
 			"img": "./dist/img/ef.png",
 			"title": "Эффекты",
 			"link": "effect.html"
