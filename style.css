@@ -14,7 +14,7 @@ body {
 }
 
 .title {
-  color: grey;
+  color: white;
   font-size: 18px;
 }
 
@@ -34,7 +34,7 @@ button {
 a {
   text-decoration: none;
   font-size: 22px;
-  color: black;
+  color: white;
 }
 
 button:hover, a:hover {
@@ -69,4 +69,14 @@ button:hover, a:hover {
     display: flex;
     justify-content: center;
   }
+}
+
+h1 {
+  
+  color: white;
+}
+
+p {
+  
+  color: #FFFAFA;
 }
