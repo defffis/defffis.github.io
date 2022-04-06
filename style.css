@@ -73,6 +73,7 @@ button:hover, a:hover {
 }
 .projects-card iframe {
   border-radius: 16px;
+ box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 }
 
 .content {
