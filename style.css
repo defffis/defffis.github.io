@@ -2,14 +2,15 @@
 body {
  /* padding: 0px 10px 0px 30px;*/
 /* padding-left: 17%;*/
+background-image: url(https://telegram.org/img/tgme/pattern.svg);
+background-repeat: repeat;
 background-color: rgba(242, 239, 228, 1);
-background-image: url(//dist/img/avatar.jpg);
-box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+
 }
 .card, .projects-card {
   background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 2px 13px 6px rgb(0 0 0 / 10%);
   /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
   max-width: 300px;
   min-width: 300px;
@@ -31,22 +32,24 @@ button {
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #000;
+  /*background-color: #000;*/
   text-align: center;
   cursor: pointer;
   width: 100%;
   font-size: 18px;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
-  background-color: rgba(139, 130, 107, 1);
+  background-color: rgba(139, 130, 107, 0.8);
   text-transform: uppercase;
+  position:absolute;bottom:0;right:0;
 
 }
 
 a {
   text-decoration: none;
   font-size: 22px;
-  color: rgba(139, 130, 107, 1);
+  /*color: rgba(139, 130, 107, 1);*/
+  /*text-shadow: 0 2px 4px rgb(0 0 0 / 10%);*/
 }
 
 button:hover, a:hover {
@@ -54,15 +57,16 @@ button:hover, a:hover {
 }
 
 .links img {
-  height: 24px; width: 24px;
+  height: 30px; width: 30px;
+  /*box-shadow: 0 2px 13px 6px rgb(0 0 0 / 10%);*/
 
 }
 
-.projects-card a {  font-size: 18px; color: #fff; }
+.projects-card a {  font-size: 18px; color: #fff; /*text-shadow: 0 2px 4px rgb(0 0 0 / 10%);*/}
 .projects-card {max-width: 300px;}
 .projects-card img {
   border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+  border-top-right-radius: 16px;
   width: 100%;
   height: 417px;
 
@@ -73,7 +77,20 @@ button:hover, a:hover {
 }
 .projects-card iframe {
   border-radius: 16px;
- box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+ box-shadow: 0 2px 13px 6px rgb(0 0 0 / 10%);
+}
+
+.c  {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(3px);
+    border-radius: 16px;
+    margin: auto;
+    /*display: flex;*/
+    flex-wrap: wrap;
+    display: inline-block;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border: blur(3px);
+
 }
 
 .content {
@@ -94,9 +111,11 @@ button:hover, a:hover {
 h1 {
   
   color: rgba(139, 130, 107, 1);
+  /*text-shadow: 0 2px 4px rgb(0 0 0 / 10%);*/
 }
 
 p {
   
   color: rgba(139, 130, 107, 1);
+  /*text-shadow: 0 2px 4px rgb(0 0 0 / 10%);*/
 }
