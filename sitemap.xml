@@ -17,10 +17,4 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://defffis.github.io/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://defffis.github.io/en/" />
   </url>
-  <url>
-    <loc>https://defffis.github.io/cv/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 </urlset>
