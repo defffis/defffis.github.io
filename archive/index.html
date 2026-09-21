@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f9">
+  <meta name="description" content="Архив старых учебных и экспериментальных веб-проектов defffis.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://defffis.github.io/archive/">
+  <title>Archive · defffis</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>
+(() => {
+  document.documentElement.classList.add('js');
+  let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  try {
+    const saved = localStorage.getItem('defffis-theme');
+    if (saved === 'light' || saved === 'dark') theme = saved;
+  } catch (_) {}
+  document.documentElement.dataset.theme = theme;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0c0e11' : '#f6f7f9');
+})();
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20260921-2">
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/">defffis<span>.</span></a>
+      <nav class="nav" id="site-nav" aria-label="Навигация">
+        <a href="/">Главная</a>
+        <a href="/#projects">Актуальные проекты</a>
+        <a href="/cv/">CV</a>
+      </nav>
+      <div class="header-actions">
+        <button class="text-button theme-toggle" type="button">Тёмная тема</button>
+        <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Меню</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="subpage-main">
+    <div class="shell">
+      <section class="subpage-hero">
+        <div class="section-marker"><span>Archive</span><span>2018—2022</span></div>
+        <h1>Учебные проекты.</h1>
+        <p class="subpage-lead">Старые макеты и учебные работы сохранены как архив. Они не отражают текущий стек, уровень или профессиональное направление.</p>
+      </section>
+
+      <div class="archive-grid">
+        <a class="archive-card" href="/pages/dart_service/" target="_blank"><div><p class="card-index">01</p><h2>DART Service Manager</h2></div><p>Учебный веб-макет ↗</p></a>
+        <a class="archive-card" href="/pages/educationtest/" target="_blank"><div><p class="card-index">02</p><h2>Education Test</h2></div><p>Учебный проект ↗</p></a>
+        <a class="archive-card" href="/pages/kontrcassa/" target="_blank"><div><p class="card-index">03</p><h2>КонтрКасса</h2></div><p>Учебный веб-макет ↗</p></a>
+        <a class="archive-card" href="/pages/modern/" target="_blank"><div><p class="card-index">04</p><h2>Modern Website</h2></div><p>Учебный веб-макет ↗</p></a>
+        <a class="archive-card" href="/pages/mycompany/" target="_blank"><div><p class="card-index">05</p><h2>My Company</h2></div><p>Учебный веб-макет ↗</p></a>
+        <a class="archive-card" href="/pages/redbox/" target="_blank"><div><p class="card-index">06</p><h2>Redbox</h2></div><p>Учебный веб-макет ↗</p></a>
+        <a class="archive-card" href="/pages/takeme/" target="_blank"><div><p class="card-index">07</p><h2>Take Me</h2></div><p>Учебный веб-макет ↗</p></a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner"><p>defffis.</p><div class="footer-links"><a href="/">Главная</a><a href="/cv/">CV</a></div><p>© <span id="year">2026</span> Даниил Наврозов</p></div>
+  </footer>
+  <script src="/script.js?v=20260921-2" defer></script>
+</body>
+</html>
