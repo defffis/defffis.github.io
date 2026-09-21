@@ -249,7 +249,7 @@ h1 {
 .facts {
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-block: 1px solid var(--border);
 }
 
@@ -408,11 +408,9 @@ h1 {
   .intro { font-size: 15px; line-height: 1.7; }
   .role-card { grid-template-columns: 1fr; padding: 22px; }
   .role-card .card-index, .role-card .quiet-line { grid-column: auto; }
-  .facts { grid-template-columns: repeat(2, 1fr); }
-  .facts div { padding: 20px 16px 20px 0; }
-  .facts div + div { padding-left: 16px; }
-  .facts div:nth-child(3) { padding-left: 0; border-top: 1px solid var(--border); border-left: 0; }
-  .facts div:nth-child(4) { border-top: 1px solid var(--border); }
+  .facts { grid-template-columns: 1fr; }
+  .facts div { padding: 18px 0; }
+  .facts div + div { padding-left: 0; border-top: 1px solid var(--border); border-left: 0; }
   .section-heading { margin-bottom: 44px; }
   .section-heading h2 { margin-top: 28px; font-size: clamp(30px, 9vw, 52px); }
   .experience-item { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
