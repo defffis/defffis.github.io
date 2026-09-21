@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://defffis.github.io/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://defffis.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://defffis.github.io/en/" />
   </url>
   <url>
-    <loc>https://defffis.github.io/effect.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://defffis.github.io/en/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://defffis.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://defffis.github.io/en/" />
   </url>
   <url>
-    <loc>https://defffis.github.io/me.html</loc>
+    <loc>https://defffis.github.io/cv/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://defffis.github.io/archive/</loc>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
