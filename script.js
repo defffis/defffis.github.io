@@ -65,21 +65,29 @@
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
 
-  if ('IntersectionObserver' in window) {
-    const navObserver = new IntersectionObserver((entries) => {
-      const current = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (!current) return;
-      navLinks.forEach((link) => {
-        const active = link.getAttribute('href') === `#${current.target.id}`;
-        link.classList.toggle('active', active);
-        if (active) link.setAttribute('aria-current', 'location');
-        else link.removeAttribute('aria-current');
-      });
-    }, { rootMargin: '-25% 0px -60%', threshold: [0, 0.25, 0.6] });
-    sections.forEach((section) => navObserver.observe(section));
-  }
+  let navFrameRequested = false;
+  const updateActiveNav = () => {
+    const marker = Math.min(180, window.innerHeight * 0.3);
+    const current = sections.find((section) => {
+      const bounds = section.getBoundingClientRect();
+      return bounds.top <= marker && bounds.bottom > marker;
+    });
+
+    navLinks.forEach((link) => {
+      const active = Boolean(current) && link.getAttribute('href') === `#${current.id}`;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    navFrameRequested = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (navFrameRequested) return;
+    navFrameRequested = true;
+    window.requestAnimationFrame(updateActiveNav);
+  }, { passive: true });
+  updateActiveNav();
 
   const year = document.querySelector('#current-year');
   if (year) year.textContent = String(new Date().getFullYear());
