@@ -1,98 +1,288 @@
-
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ru" data-theme="auto">
 <head>
-  <meta charset="UTF-8">
-  <title>Defffis</title>
-<link rel="stylesheet" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!----Пояснение страницы---->
-  <meta name="description" content="defffis" />
-  <meta name="author" content="Даниил Наврозов" />
-  <meta name="copyright" lang="ru" content="Даниил Наврозов, 2019" />
-  <link rel="icon" href="dist/img/avatar.ico" type="image/x-icon">
-<link rel="shortcut icon" href="dist/img/avatar.ico" type="image/x-icon">
-
-
- <script src="script.js"></script>
-<script type="text/javascript" src="data.json"></script>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(56007616, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/56007616" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<meta name="yandex-verification" content="1db07ef70df0039f" />
-<!-- /Yandex.Metrika counter -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Даниил Наврозов — Lead Developer</title>
+  <meta name="description" content="Даниил Наврозов — Lead Developer и ведущий разработчик 1С. Архитектура корпоративных систем, 1С:ERP, RLS, ЭЦП и интеграции.">
+  <meta name="author" content="Даниил Наврозов">
+  <meta name="theme-color" content="#f4f4ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0e" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Даниил Наврозов — Lead Developer">
+  <meta property="og:description" content="Проектирую и развиваю корпоративные системы на платформе 1С:Предприятие.">
+  <meta property="og:url" content="https://defffis.github.io/">
+  <link rel="canonical" href="https://defffis.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<body id="body" >
-  <div class="content" id="content">
-    <div class="card">
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
 
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Даниил Наврозов — на главную">
+        <span class="brand-mark" aria-hidden="true">DN</span>
+        <span class="brand-name">Даниил Наврозов</span>
+      </a>
 
-<!-- Аватар -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Открыть меню</span>
+        <span></span><span></span>
+      </button>
 
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <a href="#experience">Опыт</a>
+        <a href="#expertise">Экспертиза</a>
+        <a href="#projects">Проекты</a>
+        <a href="#education">Образование</a>
+      </nav>
 
-        <img src="dist/img/avatar.jpg" alt="Даниил Наврозов" style="width:100%; border-top-left-radius: 16px;
-  border-top-right-radius: 16px;">
-
-<!-- Заголовок -->
-        <font size="-1"><h1>Даниил Наврозов</h1></font>
-
-<!-- Подзаголовок -->
-        
-<font size="+1"><p>@defffis</p></font>
-<!-- пояснение -->
-
-<a href="URL"><p class="title">выпускник БГАЭК</p></a>
-
-<!-- ссылки -->
-        <div class="links" style="margin: 24px 0;">
-          <a href="https://www.instagram.com/defffis/"><img src="dist/img/instagram.png" alt=""></a> 
-          <a href="https://www.vk.com/defffis/"><img src="dist/img/vk.png" alt=""></a>  
-            
-          <a href="https://t.me/Flappy"><img src="dist/img/telegram.png" alt=""></a> 
-          
-           <a href="https://www.github.com/defffis/"><img src="dist/img/github.png" alt=""></a> 
-           <div>
-             <p><button><a href="mailto:navrozov.dan@gmail.com" style="color: #fff" size="-2">написать на почту</a></button></p>
-           </div>
-           <!-- <font size="-2"><p><a href="mailto:navrozov.dan@gmail.com">написать на почту</a></p></font> -->
-        </div>
-      
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Переключить цветовую тему" title="Переключить цветовую тему">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 15.7A9 9 0 0 1 8.3 3.4 9 9 0 1 0 20.6 15.7Z"/></svg>
+        </button>
+        <a class="button button-small" href="mailto:navrozov.dan@gmail.com">Связаться</a>
+      </div>
     </div>
+  </header>
 
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Lead Developer · Минск</div>
+        <h1 id="hero-title">Проектирую системы, которые выдерживают <span>реальную работу бизнеса.</span></h1>
+        <p class="hero-lead">Ведущий разработчик 1С в отделе корпоративных информационных систем. Работаю на стыке архитектуры, разработки и бизнес-анализа — от 1С:ERP до уникальных решений с RLS, ЭЦП и внешними интеграциями.</p>
+        <div class="hero-actions">
+          <a class="button" href="#experience">Посмотреть опыт
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 14 0M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="text-link" href="https://github.com/defffis" target="_blank" rel="noreferrer">GitHub
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+        <dl class="hero-facts" aria-label="Кратко обо мне">
+          <div><dt>4+ года</dt><dd>коммерческой разработки</dd></div>
+          <div><dt>1С:Профессионал</dt><dd>сертификация платформы</dd></div>
+          <div><dt>2026</dt><dd>выпускник БГУИР</dd></div>
+        </dl>
+      </div>
 
-<!-- <div class="projects-card">
+      <div class="hero-visual reveal" aria-label="Карта ключевых компетенций">
+        <div class="visual-label">SYSTEM MAP / 01</div>
+        <div class="system-map" aria-hidden="true">
+          <div class="map-ring map-ring-one"></div>
+          <div class="map-ring map-ring-two"></div>
+          <div class="map-center"><strong>1C</strong><span>Enterprise</span></div>
+          <span class="map-node node-erp">ERP</span>
+          <span class="map-node node-rls">RLS</span>
+          <span class="map-node node-eds">ЭЦП</span>
+          <span class="map-node node-api">API</span>
+        </div>
+        <div class="visual-footer">
+          <span>Архитектура</span><span>Интеграции</span><span>Автоматизация</span>
+        </div>
+      </div>
+    </section>
 
-  	<iframe frameborder="0" style="border:none;width:300px;height:495px;" width="300" height="495" src="https://music.yandex.by/iframe/#playlist/flappymuz/3">Слушайте <a href='https://music.yandex.by/users/flappymuz/playlists/3'>Мне нравится</a> — <a href='https://music.yandex.by/users/flappymuz'>defffis</a> на Яндекс.Музыке</iframe>
+    <section class="section section-dark" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="section-index">01</span><p class="eyebrow">Карьера</p></div>
+          <h2 id="experience-title">Опыт, собранный вокруг сложных корпоративных задач.</h2>
+        </div>
 
-  	</button></div> -->
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><span>2024 — сейчас</span><span>Минск</span></div>
+            <div class="timeline-role">
+              <p class="company">ГБСофт</p>
+              <h3>Lead Developer / ведущий разработчик 1С</h3>
+            </div>
+            <div class="timeline-copy">
+              <p>Вырос от проектного разработчика 1С:ERP до ведущего разработчика и архитектора. Участвую в создании корпоративных решений с нуля и развитии действующих систем.</p>
+              <ul class="tag-list" aria-label="Технологии и направления">
+                <li>1С:ERP</li><li>Архитектура</li><li>RLS</li><li>ЭЦП</li><li>ЕРИП</li><li>DriveBank</li>
+              </ul>
+            </div>
+          </article>
 
-    <div class="projects-card">
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><span>2023 — 2024</span><span>10 месяцев</span></div>
+            <div class="timeline-role">
+              <p class="company">Первый БИТ</p>
+              <h3>Проектный разработчик 1С</h3>
+            </div>
+            <div class="timeline-copy">
+              <p>Разработка и внедрение решений на базе ITILIUM, ERP, ЗУП и Бухгалтерии: бизнес-процессы, права доступа, учёт ИТ-активов и интеграции с корпоративными системами.</p>
+              <ul class="tag-list" aria-label="Технологии и направления">
+                <li>ITILIUM</li><li>ITSM</li><li>1С:ЗУП</li><li>1С:Бухгалтерия</li><li>AI-интеграции</li>
+              </ul>
+            </div>
+          </article>
 
-    <iframe frameborder="0" style="border:none;width:300px;height:495px;" width="300" height="495" src="https://open.spotify.com/embed/playlist/5myIwcWbdH3zUvpyEssvLJ?utm_source=generator">Слушайте <a href='https://open.spotify.com/embed/playlist/5myIwcWbdH3zUvpyEssvLJ'>just relax</a> — <a href='https://open.spotify.com/user/gw1wsb61jxg87c1tldu6jwc00?utm_source=generator'>defffis</a> на Spotify</iframe>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><span>2022 — 2023</span><span>1 год 6 месяцев</span></div>
+            <div class="timeline-role">
+              <p class="company">ОАО «ГАЛАНТЭЯ»</p>
+              <h3>Разработчик 1С:ERP</h3>
+            </div>
+            <div class="timeline-copy">
+              <p>Поддержка и развитие 1С:ERP: печатные формы, отчёты, консультации пользователей, перенос данных и доработка производственных процессов.</p>
+              <ul class="tag-list" aria-label="Технологии и направления">
+                <li>1С:ERP</li><li>Отчёты</li><li>Печатные формы</li><li>Поддержка</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    </button></div>
+    <section class="section container" id="expertise" aria-labelledby="expertise-title">
+      <div class="section-heading reveal">
+        <div><span class="section-index">02</span><p class="eyebrow">Экспертиза</p></div>
+        <h2 id="expertise-title">От модели данных до запуска системы.</h2>
+      </div>
 
+      <div class="expertise-grid">
+        <article class="expertise-card reveal">
+          <span class="card-number">01</span>
+          <h3>Архитектура 1С</h3>
+          <p>Проектирование конфигураций, подсистем, ролей и маршрутов с учётом развития продукта и нагрузки.</p>
+          <div class="card-line"></div>
+          <span class="card-note">Enterprise systems</span>
+        </article>
+        <article class="expertise-card reveal">
+          <span class="card-number">02</span>
+          <h3>ERP и автоматизация</h3>
+          <p>Адаптация 1С:ERP, производственных процессов, трудозатрат, рекламаций и операций пользователей.</p>
+          <div class="card-line"></div>
+          <span class="card-note">Process engineering</span>
+        </article>
+        <article class="expertise-card reveal">
+          <span class="card-number">03</span>
+          <h3>Интеграции</h3>
+          <p>Связь 1С с ЭЦП, ЕРИП, банками, сайтами, Telegram и AI-сервисами. Обмен данными и отказоустойчивые сценарии.</p>
+          <div class="card-line"></div>
+          <span class="card-note">API &amp; data exchange</span>
+        </article>
+        <article class="expertise-card expertise-card-accent reveal">
+          <span class="card-number">04</span>
+          <h3>Безопасность</h3>
+          <p>RLS, роли, аудит доступов и интеграция с системами управления информационной безопасностью.</p>
+          <div class="card-line"></div>
+          <span class="card-note">Access by design</span>
+        </article>
+      </div>
+    </section>
 
-    <!-- сайты берутся из json :) -->
+    <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="section-index">03</span><p class="eyebrow">Open source</p></div>
+          <h2 id="projects-title">Проекты за пределами корпоративной разработки.</h2>
+        </div>
 
-  </div>
-  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+        <div class="projects-grid">
+          <a class="project-card project-featured reveal" href="https://github.com/defffis/hello-wallpaper-configurator" target="_blank" rel="noreferrer">
+            <div class="project-top"><span>01 / Browser tool</span><span class="project-arrow">↗</span></div>
+            <div class="project-body">
+              <h3>Hello Wallpaper</h3>
+              <p>Браузерный конфигуратор обоев для iPhone: Canvas-рендеринг, векторная надпись, Liquid Glass, экспорт PNG, видео и Live Photo.</p>
+            </div>
+            <ul class="tag-list"><li>JavaScript</li><li>Canvas</li><li>Live Photo</li></ul>
+          </a>
 
-  
+          <a class="project-card reveal" href="https://github.com/defffis/country-proxy-pac" target="_blank" rel="noreferrer">
+            <div class="project-top"><span>02 / Automation</span><span class="project-arrow">↗</span></div>
+            <div class="project-body">
+              <h3>Country Proxy PAC</h3>
+              <p>Автоматический сбор, многоэтапная проверка и публикация PAC-файлов публичных прокси по фактической стране выхода.</p>
+            </div>
+            <ul class="tag-list"><li>Python</li><li>GitHub Actions</li><li>Networking</li></ul>
+          </a>
+
+          <a class="project-card reveal" href="https://github.com/defffis/FakeGPS_Tampermonkey" target="_blank" rel="noreferrer">
+            <div class="project-top"><span>03 / Userscript</span><span class="project-arrow">↗</span></div>
+            <div class="project-body">
+              <h3>FakeGPS</h3>
+              <p>Tampermonkey-скрипт для управления геолокацией в браузере с собственным интерфейсом и сохранением настроек.</p>
+            </div>
+            <ul class="tag-list"><li>JavaScript</li><li>Geolocation API</li><li>Tampermonkey</li></ul>
+          </a>
+
+          <a class="project-card reveal" href="https://github.com/defffis/TelegramGPT" target="_blank" rel="noreferrer">
+            <div class="project-top"><span>04 / Bot</span><span class="project-arrow">↗</span></div>
+            <div class="project-body">
+              <h3>TelegramGPT</h3>
+              <p>Telegram-бот с подключением языковой модели, историей диалогов и поисковыми сценариями.</p>
+            </div>
+            <ul class="tag-list"><li>Telegram</li><li>LLM API</li><li>Automation</li></ul>
+          </a>
+        </div>
+
+        <a class="all-projects-link reveal" href="https://github.com/defffis?tab=repositories" target="_blank" rel="noreferrer">
+          Все репозитории на GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section container" id="education" aria-labelledby="education-title">
+      <div class="section-heading reveal">
+        <div><span class="section-index">04</span><p class="eyebrow">Образование</p></div>
+        <h2 id="education-title">Техническая база и постоянная практика.</h2>
+      </div>
+
+      <div class="education-grid">
+        <article class="education-card reveal">
+          <p class="education-year">2022 — 2026</p>
+          <h3>БГУИР</h3>
+          <p>Бакалавр технологических наук</p>
+          <strong>Информационные системы и технологии в управлении бизнесом</strong>
+        </article>
+        <article class="education-card reveal">
+          <p class="education-year">2018 — 2022</p>
+          <h3>БГАЭК</h3>
+          <p>Диплом специалиста</p>
+          <strong>Программное обеспечение информационных технологий</strong>
+        </article>
+        <article class="education-card certificate-card reveal">
+          <p class="education-year">Сертификация</p>
+          <div class="certificate-mark" aria-hidden="true">1C</div>
+          <h3>1С:Профессионал</h3>
+          <strong>Платформа «1С:Предприятие 8.3»</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-inner reveal">
+        <div>
+          <p class="eyebrow">Контакты</p>
+          <h2 id="contact-title">Обсудим систему,<br>которую нужно построить.</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="contact-email" href="mailto:navrozov.dan@gmail.com">navrozov.dan@gmail.com <span aria-hidden="true">↗</span></a>
+          <div class="social-links" aria-label="Социальные сети">
+            <a href="https://t.me/Flappy" target="_blank" rel="noreferrer">Telegram</a>
+            <a href="https://www.linkedin.com/in/daniil-navrozov" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/defffis" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.instagram.com/defffis/" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="current-year">2026</span> Даниил Наврозов</p>
+      <p>Lead Developer · 1C Enterprise</p>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </footer>
 </body>
-
-
 </html>

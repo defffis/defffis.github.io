@@ -1,11 +1,9 @@
 User-agent: *
-
-Disallow: /pages/css/
+Allow: /
 
 Disallow: /dist/fonts/
-
 Disallow: /dist/jq/
-
 Disallow: /dist/js/
-
 Disallow: /dist/psd/
+
+Sitemap: https://defffis.github.io/sitemap.xml
