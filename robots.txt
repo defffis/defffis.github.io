@@ -1,9 +1,15 @@
 User-agent: *
 Allow: /
-
-Disallow: /dist/fonts/
-Disallow: /dist/jq/
-Disallow: /dist/js/
-Disallow: /dist/psd/
+Disallow: /dist/
+Disallow: /effect/
+Disallow: /effect.html
+Disallow: /me.html
+Disallow: /me.1html
+Disallow: /URL.html
+Disallow: /data.json
+Disallow: /data.1json
+Disallow: /pages/
+Disallow: /part/
+Disallow: /pinterest-10481.html
 
 Sitemap: https://defffis.github.io/sitemap.xml
