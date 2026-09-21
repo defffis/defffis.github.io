@@ -1,94 +1,91 @@
-(() => {
-  const root = document.documentElement;
-  const body = document.body;
-  const themeToggle = document.querySelector('.theme-toggle');
-  const menuToggle = document.querySelector('.menu-toggle');
-  const siteHeader = document.querySelector('.site-header');
-  const navLinks = [...document.querySelectorAll('.site-nav a')];
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+const root = document.documentElement;
+const themeToggle = document.querySelector('.theme-toggle');
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
+const header = document.querySelector('.site-header');
+const metaTheme = document.querySelector('meta[name="theme-color"]');
+const storageKey = 'defffis-theme';
 
-  const getSavedTheme = () => {
-    try { return localStorage.getItem('portfolio-theme'); } catch { return null; }
-  };
+function preferredTheme() {
+  const saved = localStorage.getItem(storageKey);
+  if (saved === 'light' || saved === 'dark') return saved;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
 
-  const applyTheme = (theme) => {
-    const resolved = theme || (systemTheme.matches ? 'dark' : 'light');
-    root.dataset.theme = resolved;
-    themeToggle?.setAttribute('aria-label', resolved === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему');
-  };
+function applyTheme(theme) {
+  root.dataset.theme = theme;
+  const nextLabel = theme === 'dark' ? 'Светлая тема' : 'Тёмная тема';
+  themeToggle.textContent = nextLabel;
+  themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему');
+  metaTheme.setAttribute('content', theme === 'dark' ? '#0c0e11' : '#f6f7f9');
+}
 
-  applyTheme(getSavedTheme());
+applyTheme(preferredTheme());
 
-  themeToggle?.addEventListener('click', () => {
-    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-    try { localStorage.setItem('portfolio-theme', next); } catch { /* Storage may be unavailable. */ }
+themeToggle.addEventListener('click', () => {
+  const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem(storageKey, next);
+  applyTheme(next);
+});
+
+menuToggle.addEventListener('click', () => {
+  const open = nav.classList.toggle('is-open');
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.textContent = open ? 'Закрыть' : 'Меню';
+});
+
+nav.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = 'Меню';
   });
+});
 
-  systemTheme.addEventListener?.('change', () => {
-    if (!getSavedTheme()) applyTheme(null);
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
   });
+}, { threshold: 0.08 });
 
-  const closeMenu = () => {
-    body.classList.remove('menu-open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
-  };
+document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
 
-  menuToggle?.addEventListener('click', () => {
-    const isOpen = body.classList.toggle('menu-open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
+const sections = Array.from(document.querySelectorAll('main section[id]'));
+const navLinks = Array.from(nav.querySelectorAll('a'));
+let ticking = false;
+
+function updateScrollState() {
+  header.classList.toggle('is-scrolled', window.scrollY > 8);
+  const marker = window.scrollY + Math.min(window.innerHeight * 0.35, 260);
+  let current = sections[0];
+  sections.forEach((section) => {
+    if (section.offsetTop <= marker) current = section;
   });
+  navLinks.forEach((link) => {
+    const active = Boolean(current) && link.getAttribute('href') === '#' + current.id;
+    if (active) link.setAttribute('aria-current', 'true');
+    else link.removeAttribute('aria-current');
+  });
+  ticking = false;
+}
 
-  navLinks.forEach((link) => link.addEventListener('click', closeMenu));
-  window.addEventListener('resize', () => { if (window.innerWidth > 1020) closeMenu(); });
-
-  const updateHeader = () => siteHeader?.classList.toggle('scrolled', window.scrollY > 8);
-  updateHeader();
-  window.addEventListener('scroll', updateHeader, { passive: true });
-
-  const reveals = document.querySelectorAll('.reveal');
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    reveals.forEach((element) => element.classList.add('is-visible'));
-  } else {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -50px' });
-    reveals.forEach((element) => revealObserver.observe(element));
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(updateScrollState);
+    ticking = true;
   }
+}, { passive: true });
 
-  const sections = navLinks
-    .map((link) => document.querySelector(link.getAttribute('href')))
-    .filter(Boolean);
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 980) {
+    nav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = 'Меню';
+  }
+});
 
-  let navFrameRequested = false;
-  const updateActiveNav = () => {
-    const marker = Math.min(180, window.innerHeight * 0.3);
-    const current = sections.find((section) => {
-      const bounds = section.getBoundingClientRect();
-      return bounds.top <= marker && bounds.bottom > marker;
-    });
-
-    navLinks.forEach((link) => {
-      const active = Boolean(current) && link.getAttribute('href') === `#${current.id}`;
-      link.classList.toggle('active', active);
-      if (active) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
-    navFrameRequested = false;
-  };
-
-  window.addEventListener('scroll', () => {
-    if (navFrameRequested) return;
-    navFrameRequested = true;
-    window.requestAnimationFrame(updateActiveNav);
-  }, { passive: true });
-  updateActiveNav();
-
-  const year = document.querySelector('#current-year');
-  if (year) year.textContent = String(new Date().getFullYear());
-})();
+document.getElementById('year').textContent = new Date().getFullYear();
+updateScrollState();
